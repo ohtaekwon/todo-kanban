@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "@emotion/css";
 
 import * as Styled from "./index.styles";
 
@@ -30,6 +29,9 @@ const BackGround = () => {
         <Styled.Item variant={47}></Styled.Item>
         <Styled.Item variant={26}></Styled.Item>
         <Styled.Item variant={35}></Styled.Item>
+        <Styled.Item variant={25}></Styled.Item>
+        <Styled.Item variant={16}></Styled.Item>
+        <Styled.Item variant={14}></Styled.Item>
         <Styled.Item variant={30}></Styled.Item>
         <Styled.Item variant={29}></Styled.Item>
       </Styled.Inner>

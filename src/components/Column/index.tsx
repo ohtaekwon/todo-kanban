@@ -18,9 +18,6 @@ import { TaskModel } from "types/index.types";
 import { status } from "utils/constants";
 
 const Column = ({
-  /**
-   *  todo에서 쓰이는 column 컴포넌트
-   */
   as = "div",
   localStorageKey,
   className,

@@ -15,9 +15,7 @@ const App = () => {
   const isMobile = useMediaQuery({
     query: "(min-width:0px) and (max-width:599px)",
   });
-  // const isTablet = useMediaQuery({
-  //   query: "(min-width:600px) and (max-width:900px)",
-  // });
+
   const isDesktop = useMediaQuery({
     query: "(min-width:900px)",
   });
