@@ -4,7 +4,7 @@ import { ColumnType, TaskModel } from "types/index.types";
 
 import useTaskCollection from "./useTaskCollection";
 import { pickRandomColor, swap } from "utils/helpers";
-
+import { status } from "utils/constants";
 const MAX_TASK_PER_COLUMN = 100;
 
 function useColumnTasks<T>(key: string, column: ColumnType) {
@@ -22,15 +22,10 @@ function useColumnTasks<T>(key: string, column: ColumnType) {
         console.log("Task가 너무 많습니다.");
         return allTasks;
       }
-      //   allTasks: {
-      //     Todo: TaskModel[];
-      //     "In Progress": TaskModel[];
-      //     Blocked: TaskModel[];
-      //     Completed: TaskModel[];
-      // }
+      const newStatus = status[column];
       const newColumnTask = {
         id: uuid(),
-        title: `New ${column} tasks`,
+        title: `${newStatus} 상태의 내용을 적어주세요.`,
         color: pickRandomColor("_500"),
         column,
       };

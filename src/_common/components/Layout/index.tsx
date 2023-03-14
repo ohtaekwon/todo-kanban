@@ -1,7 +1,5 @@
-import Header from "components/Header";
+import BackGround from "components/Background";
 import React from "react";
-import { Outlet } from "react-router-dom";
-
 import * as Styled from "./index.styles";
 import { Props } from "./index.types";
 
@@ -11,7 +9,8 @@ export const Layout = React.forwardRef(function Layout(
     variant,
     backgroundColor = "inherit",
     backgroundImage = "inherit",
-    header,
+
+    background,
     children,
     ...rest
   }: React.PropsWithChildren<Props>,
@@ -28,19 +27,9 @@ export const Layout = React.forwardRef(function Layout(
         ref={forwardedRef}
         {...rest}
       >
-        {header && <Header />}
+        {background && <BackGround />}
         {children}
       </Styled.Layout>
     </>
   );
 });
-
-export const LayoutElement = ({
-  children,
-  className,
-}: {
-  children?: React.ReactNode;
-  className: string;
-}) => {
-  return <div>{children}</div>;
-};

@@ -11,15 +11,9 @@ export interface ColumnProps {
    */
   as?: ElementType;
 }
-export interface CommonProps
-  extends HTMLAttributes<HTMLDivElement>,
-    ColumnProps {
-  children?: React.ReactNode;
-  type?: string;
-}
-
-export interface LocalStorageColumnProps extends CommonProps {
+export interface Props extends HTMLAttributes<HTMLDivElement>, ColumnProps {
   column: ColumnType;
   columnColorSchema?: Record<ColumnType, BadgeType>;
   localStorageKey: string;
+  addBtn?: boolean;
 }

@@ -11,12 +11,7 @@ export type BoxType =
   /**
    *  Box의 variant에 따른 디자인된 BOX를 설정합니다.
    */
-  | "primary"
-  | "default"
-  | "gray_200_border"
-  | "blue_200_border"
-  | "front"
-  | "back";
+  "primary" | "default" | "gray_200_border" | "transparent";
 
 export interface BoxProps {
   /**

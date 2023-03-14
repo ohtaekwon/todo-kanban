@@ -6,7 +6,7 @@ const globalStyle = css`
   #root {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100vh;
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
       Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
       "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",

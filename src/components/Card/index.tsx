@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 import { TodoCardProps } from "./index.types";
 
 import useAutoHeightTextarea from "hooks/useAutoHeightTextarea";
@@ -48,7 +50,7 @@ const Card = ({
     <Box
       ref={ref}
       as="div"
-      variant="gray_200_border"
+      variant="default"
       role="group"
       position="relative"
       display="flex"
@@ -57,7 +59,7 @@ const Card = ({
       marginTop={20}
       marginBottom={20}
       backgroundColor={task.color}
-      cursor="grab"
+      cursor="pointer"
       opacity={isDragging ? 0.5 : 1}
     >
       <Flex direction="column" width="100%">
@@ -72,10 +74,14 @@ const Card = ({
             areaLabel="delete"
             onClick={handleDeleteClick}
           >
-            {/* <RiDeleteBin6Line /> */}
+            <RiDeleteBin6Line />
           </Button>
         </Box>
         <Textarea
+          ref={textAreaRef}
+          value={task.title}
+          onChange={handleChange}
+          onKeyDown={checkItemEnterHandler}
           width="100%"
           height={lineHeight * 27 + 150}
           margin="auto"
@@ -85,10 +91,8 @@ const Card = ({
           paddingRight={10}
           paddingTop={30}
           fontSize="xxl"
-          ref={textAreaRef}
-          value={task.title}
-          onChange={handleChange}
-          onKeyDown={checkItemEnterHandler}
+          color="gray_100"
+          style={{ border: 0 }}
         >
           {task.title}
         </Textarea>

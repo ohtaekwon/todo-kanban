@@ -20,7 +20,7 @@ export const Flex = styled.span<Required<FlexProps>>`
   * 배경/테두리 스타일 설정
   */
   background-color: ${({ backgroundColor, theme }) =>
-    theme.colors[backgroundColor]};
+    theme.colors[backgroundColor]}!important;
   /**
   * 간격 설정
   */

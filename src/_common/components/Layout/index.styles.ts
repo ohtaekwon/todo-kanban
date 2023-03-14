@@ -10,7 +10,7 @@ export const Layout = styled.main<Required<LayoutProps>>`
     theme.colors[backgroundColor]};
   background: ${({ backgroundImage }) => backgroundImage};
   position: relative;
-  z-index: 1;
+  /* z-index: -9; */
   ${({ variant, backgroundColor }) => {
     switch (variant) {
       case "default": {
@@ -41,12 +41,10 @@ export const Layout = styled.main<Required<LayoutProps>>`
       }
       case "xl": {
         return css`
-          max-width: 1600px;
+          background: #0c192c;
+          height: max-content;
         `;
       }
     }
   }}
-`;
-export const Aside = styled.aside<Required<any>>`
-  width: 20%;
 `;

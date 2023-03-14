@@ -21,3 +21,10 @@ export const emoji = {
   DOCUMENT: "📜",
   WRITE: "✍🏻",
 } as const;
+
+export const status = {
+  Todo: "할 일",
+  "In Progress": "진행중",
+  Blocked: "취소",
+  Completed: "완료",
+};

@@ -32,5 +32,5 @@ export interface LayoutProps {
   backgroundImage?: CSSProperties["backgroundImage"];
 }
 export interface Props extends HTMLAttributes<HTMLElement>, LayoutProps {
-  header: boolean;
+  background?: boolean;
 }
