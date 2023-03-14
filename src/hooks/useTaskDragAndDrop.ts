@@ -56,7 +56,6 @@ function useTaskDragAndDrop<T extends HTMLElement>(
       // drag 항목이 없으면 null
       const { x: mouseX, y: mouseY } = monitor.getClientOffset() as XYCoord;
 
-      console.log(mouseX, mouseY);
       // get hover한 item의 사각형 경계면
       // getBoundingClientRect | 현재 뷰포트의 브라우저 엘리먼트 좌표 값 구하기
       const hoveredBoundingRect = ref.current.getBoundingClientRect();

@@ -62,7 +62,6 @@ const Column = ({
               <Badge
                 className="badge"
                 width="300px"
-                // height="100%"
                 variant={columnColorSchema[column]}
                 children={status[column]}
                 paddingBottom={20}
@@ -82,7 +81,7 @@ const Column = ({
               variant="primary"
               onClick={addEmptyTask}
               marginBottom={10}
-              width={"100%"}
+              width={"50%"}
               height={"50px"}
               fontSize={"xl"}
             >

@@ -85,17 +85,8 @@ export const Box = styled.span<Required<BoxProps>>`
          */
         return css`
           border: 0;
-          border-color: ${theme.colors.gray_200}!important;
           background-color: ${theme.colors.transparent}!important;
           color: ${theme.colors.white}!important;
-          box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
-          transition: background-color 0.15s ease-in-out,
-            border-color 0.15s ease-in-out, color 0.15s ease-in-out;
-          &:hover {
-            border-color: ${theme.colors.blue_500};
-            background-color: ${theme.colors.blue_500};
-            color: ${theme.colors.white};
-          }
         `;
       }
       case "gray_200_border": {

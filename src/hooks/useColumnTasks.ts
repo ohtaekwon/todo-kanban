@@ -15,7 +15,6 @@ function useColumnTasks<T>(key: string, column: ColumnType) {
     console.log(`Adding new Empty task to ${column} column`);
 
     setTasks((allTasks) => {
-      // console.log(keyof typeof allTa)
       const columnTasks = allTasks[column];
 
       if (columnTasks.length > MAX_TASK_PER_COLUMN) {

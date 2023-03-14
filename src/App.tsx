@@ -1,6 +1,7 @@
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { useMediaQuery } from "react-responsive";
 
 import { Layout } from "_common/components/Layout";
 import Text from "_common/components/Text";
@@ -11,6 +12,16 @@ import { ColumnType } from "types/index.types";
 import { ColumnColorSchema } from "types/schema.types";
 
 const App = () => {
+  const isMobile = useMediaQuery({
+    query: "(min-width:0px) and (max-width:599px)",
+  });
+  // const isTablet = useMediaQuery({
+  //   query: "(min-width:600px) and (max-width:900px)",
+  // });
+  const isDesktop = useMediaQuery({
+    query: "(min-width:900px)",
+  });
+
   return (
     <Layout id="App" variant="xl" background>
       <Text
@@ -29,7 +40,7 @@ const App = () => {
       <DndProvider backend={HTML5Backend}>
         <Grid
           backgroundColor="transparent"
-          gridTemplateColumns="repeat(4, 1fr)"
+          gridTemplateColumns={`repeat(${isDesktop ? 4 : 1}, 1fr)`}
           padding="1rem"
           style={{
             width: "100%",
