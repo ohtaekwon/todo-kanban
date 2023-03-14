@@ -54,7 +54,7 @@ function useTaskDragAndDrop<T extends HTMLElement>(
       // get 마우스 좌표
       // drag 작업이 진행되는 동안 포인터가 마지막으로 기록된 클라이언트 오프셋을 반환
       // drag 항목이 없으면 null
-      const { x: mouseX, y: mouseY } = monitor.getClientOffset() as XYCoord;
+      const { x, y: mouseY } = monitor.getClientOffset() as XYCoord;
 
       // get hover한 item의 사각형 경계면
       // getBoundingClientRect | 현재 뷰포트의 브라우저 엘리먼트 좌표 값 구하기
