@@ -12,10 +12,6 @@ import { ColumnType } from "types/index.types";
 import { ColumnColorSchema } from "types/schema.types";
 
 const App = () => {
-  const isMobile = useMediaQuery({
-    query: "(min-width:0px) and (max-width:599px)",
-  });
-
   const isDesktop = useMediaQuery({
     query: "(min-width:900px)",
   });
