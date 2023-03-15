@@ -1,12 +1,17 @@
 # ToDo with Kanban
 
-[Demo페이지 보러가기](https://app.netlify.com/sites/spontaneous-kelpie-b176ff/overview)
+[Demo페이지 보러가기](https://spontaneous-kelpie-b176ff.netlify.app/)
 
 ## Tech Stack
 
 ![https://img.shields.io/badge/Laguage-Typescript-red](https://img.shields.io/badge/Laguage-Typescript-green?logo=Typescript&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-React-green?logo=React&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-ReactDnD-red?logo=ReactDnD&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-useHookTS-red?logo=ReactDnD&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-emotion/resct-yellow?logo=emotion&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-emotion/css-yellow?logo=emotion&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-emotion/styled-yellow?logo=emotion&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-emotion/css-yellow?logo=emotion&logoColor=#377549) ![](https://img.shields.io/badge/Labarary-ReactResponsive-blue?logo=ReactResponsive&logoColor=#377549)
 
 ## Custom Hooks
+
+> 참고
+
+- [React DnD](https://react-dnd.github.io/react-dnd/about)
+- [useHooks-ts](https://usehooks-ts.com/)
 
 ### useLocalStorage
 
@@ -447,7 +452,39 @@ function useAutoHeightTextarea() {
 }
 ```
 
-## 참고
+## Moving Background
 
-- [React DnD](https://react-dnd.github.io/react-dnd/about)
-- [useHooks-ts](https://usehooks-ts.com/)
+keyframse를 사용하여, 애니메이션을 재생할 프레임을 정하도록 하였습니다.
+
+- `0%` : 애니메이션의 시작 프레임
+- `100%` : 애니메이션의 마지막 프레임
+
+`animation-delay`에 변수를 사용하여 엘리먼트가 로드되고 나서 언제 애니메이션이 시작될지 변수`variant` 값에 따라 다르게 표현될 수 있도록 하였습니다.
+
+```ts
+const KeyFrames = keyframes`
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  
+`;
+
+export const Item = styled.span<{ variant: number }>`
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #4fc3dc;
+  margin: 0 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: ${KeyFrames} 15s linear infinite;
+  animation-duration: ${({ variant }) => css`calc(125s / ${variant})`};
+  :nth-of-type(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+  }
+`;
+```
