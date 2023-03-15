@@ -85,7 +85,7 @@ export const Box = styled.span<Required<BoxProps>>`
          */
         return css`
           border: 0;
-          background-color: ${theme.colors.transparent}!important;
+          background-color: rgba(204, 204, 204, 0.2) !important;
           color: ${theme.colors.white}!important;
         `;
       }

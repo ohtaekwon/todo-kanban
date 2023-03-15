@@ -10,7 +10,6 @@ import useTaskDragAndDrop from "hooks/useTaskDragAndDrop";
 import Box from "_common/components/Box";
 import Button from "_common/components/Button";
 import Textarea from "_common/components/Textarea";
-import Text from "_common/components/Text";
 import Flex from "_common/components/Flex";
 
 const Card = ({
